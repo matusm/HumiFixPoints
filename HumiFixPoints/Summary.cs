@@ -57,7 +57,7 @@ namespace HumiFixPoints
             for (int i = 0; i < stpTemperatures.Length; i++)
                 sb.AppendLine($"- Sensor#{i + 1} t: {stpTemperatures[i].AverageValue:F3}({stpTemperatures[i].StandardDeviation:F3})[{stpTemperatures[i].Range:F3}] °C");
             for (int i = 0; i < stpDeviations.Length; i++)
-                sb.AppendLine($"- Sensor#{i + 1} h_error: {stpDeviations[i].AverageValue:+0.00;-#.00}({stpDeviations[i].StandardDeviation:F2})[{stpDeviations[i].Range:F2}] %");
+                sb.AppendLine($"- Sensor#{i + 1} h_error: {stpDeviations[i].AverageValue:+0.00;-0.00}({stpDeviations[i].StandardDeviation:F2})[{stpDeviations[i].Range:F2}] %");
             sb.Append($"=====================================================================");
             return sb.ToString();
         }

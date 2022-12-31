@@ -14,7 +14,7 @@ namespace HumiFixPoints
 
         private static int LOG_INTERVALL = 5;           // in minutes, must be divisor of 60
         private static int LOG_INTERVALL_TOLERANCE = 4; // in seconds
-        private static int DISCARD_FIRST = 2;           // number of readings not logged
+        private static int DISCARD_FIRST = 4;           // number of readings not logged
         private static TransmitterSet transmitterSet;
         private static Summary summary;
         private static Options options;
@@ -199,6 +199,7 @@ namespace HumiFixPoints
             sb.AppendLine($"User comment: {options.UserComment}");
             sb.AppendLine($"Fixed point solution: {GetSaltFromOption()}");
             sb.AppendLine($"Averaging intervall {LOG_INTERVALL} min");
+            sb.AppendLine($"Discard first {DISCARD_FIRST} values ({LOG_INTERVALL*DISCARD_FIRST} min)");
             sb.AppendLine($"Summarize at all {options.SummaryHours} h");
             sb.AppendLine($"Data file {csvFileName}"); 
             sb.AppendLine($"Summary file {logFileName}");
