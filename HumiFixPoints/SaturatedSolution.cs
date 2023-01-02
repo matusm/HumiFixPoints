@@ -14,17 +14,16 @@ namespace HumiFixPoints
 {
     public class SaturatedSolution
     {
-        private readonly Salt salt;
         private double a0, a1, a2, a3;
         private double t_min, t_max;
 
         public SaturatedSolution(Salt salt)
         {
-            this.salt = salt;
+            Salt = salt;
             PopulateCoefficients();
         }
 
-        public Salt Salt => salt;
+        public Salt Salt { get; }
 
         public double GetHumidityFor(double temperature)
         {
@@ -45,12 +44,20 @@ namespace HumiFixPoints
                     t_min = double.NaN;
                     t_max = double.NaN;
                     break;
+                case Salt.HFP12:
+                    a0 = 11.2323;
+                    a1 = -0.00824245;
+                    a2 = -0.214890E-3;
+                    a3 = 0.0;
+                    t_min = 5;  // 0
+                    t_max = 80; // 100.3
+                    break;
                 case Salt.HFP75:
                     a0 = 75.5164;
                     a1 = 0.0398321;
                     a2 = -0.265459E-2;
                     a3 = 0.2848E-4;
-                    t_min = 0;
+                    t_min = 5;  // 0
                     t_max = 80;
                     break;
                 case Salt.HFP33:
@@ -58,8 +65,8 @@ namespace HumiFixPoints
                     a1 = -0.00797397;
                     a2 = -0.108988E-2;
                     a3 = 0.0;
-                    t_min = 0;
-                    t_max = 99.4;
+                    t_min = 0;  // 0
+                    t_max = 80; // 99.4
                     break;
                 case Salt.HFP100:
                     a0 = 100.0;
@@ -74,8 +81,8 @@ namespace HumiFixPoints
                     a1 = -0.19334;
                     a2 = 0.899706E-3;
                     a3 = 0.0;
-                    t_min = 0;
-                    t_max = 90;
+                    t_min = 5;  // 0
+                    t_max = 80; // 90
                     break;
             }
         }
@@ -84,8 +91,9 @@ namespace HumiFixPoints
     public enum Salt
     {
        None,
-       HFP75,   // NaCl
+       HFP12,   // LiCl
        HFP33,   // MgCl2
+       HFP75,   // NaCl
        HFP85,   // KCl
        HFP100   // H2O
     }

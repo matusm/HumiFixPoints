@@ -11,17 +11,20 @@ namespace HumiFixPoints
         [Option("prefix", DefaultValue = "HumFix", HelpText = "Prefix for file names.")]
         public string Prefix { get; set; }
 
-        [Option("NaCl", DefaultValue = false, HelpText = "Fix point: saturated NaCl solution.")]
-        public bool NaCl { get; set; }
+        [Option("MgCl2", DefaultValue = false, HelpText = "Fix point HFP12: saturated LiCl solution.")]
+        public bool Hfp12 { get; set; }
 
-        [Option("MgCl2", DefaultValue = false, HelpText = "Fix point: saturated MgCl2 solution.")]
-        public bool MgCl2 { get; set; }
+        [Option("MgCl2", DefaultValue = false, HelpText = "Fix point HFP33: saturated MgCl2 solution.")]
+        public bool Hfp33 { get; set; }
 
-        [Option("KCl", DefaultValue = false, HelpText = "Fix point: saturated KCl solution.")]
-        public bool KCl { get; set; }
+        [Option("NaCl", DefaultValue = false, HelpText = "Fix point HFP75: saturated NaCl solution.")]
+        public bool Hfp75 { get; set; }
+
+        [Option("KCl", DefaultValue = false, HelpText = "Fix point HFP85: saturated KCl solution.")]
+        public bool Hfp85 { get; set; }
 
         [Option("H2O", DefaultValue = false, HelpText = "Fix point: pure water.")]
-        public bool H2O { get; set; }
+        public bool Hfp100 { get; set; }
 
         [Option("comment", DefaultValue = "---", HelpText = "User supplied comment string.")]
         public string UserComment { get; set; }
