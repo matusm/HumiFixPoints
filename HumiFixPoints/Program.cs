@@ -181,10 +181,10 @@ namespace HumiFixPoints
         private static Salt GetSaltFromOption()
         {
             // the order determines the priority in case of multiple choices
-            if (options.MgCl2) return Salt.MgCl2;
-            if (options.NaCl) return Salt.NaCl;
-            if (options.KCl) return Salt.KCl;
-            if (options.H2O) return Salt.H2O;
+            if (options.MgCl2) return Salt.HFP33;
+            if (options.NaCl) return Salt.HFP75;
+            if (options.KCl) return Salt.HFP85;
+            if (options.H2O) return Salt.HFP100;
             return Salt.None;
         }
 
