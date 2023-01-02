@@ -36,14 +36,6 @@ namespace HumiFixPoints
         {
             switch (Salt)
             {
-                case Salt.None:
-                    a0 = double.NaN;
-                    a1 = double.NaN;
-                    a2 = double.NaN;
-                    a3 = double.NaN;
-                    t_min = double.NaN;
-                    t_max = double.NaN;
-                    break;
                 case Salt.HFP12:
                     a0 = 11.2323;
                     a1 = -0.00824245;
@@ -51,14 +43,6 @@ namespace HumiFixPoints
                     a3 = 0.0;
                     t_min = 5;  // 0
                     t_max = 80; // 100.3
-                    break;
-                case Salt.HFP75:
-                    a0 = 75.5164;
-                    a1 = 0.0398321;
-                    a2 = -0.265459E-2;
-                    a3 = 0.2848E-4;
-                    t_min = 5;  // 0
-                    t_max = 80;
                     break;
                 case Salt.HFP33:
                     a0 = 33.6686;
@@ -68,13 +52,13 @@ namespace HumiFixPoints
                     t_min = 0;  // 0
                     t_max = 80; // 99.4
                     break;
-                case Salt.HFP100:
-                    a0 = 100.0;
-                    a1 = 0.0;
-                    a2 = 0.0;
-                    a3 = 0.0;
-                    t_min = 0;
-                    t_max = 100;
+                case Salt.HFP75:
+                    a0 = 75.5164;
+                    a1 = 0.0398321;
+                    a2 = -0.265459E-2;
+                    a3 = 0.2848E-4;
+                    t_min = 5;  // 0
+                    t_max = 80;
                     break;
                 case Salt.HFP85:
                     a0 = 88.619;
@@ -83,6 +67,23 @@ namespace HumiFixPoints
                     a3 = 0.0;
                     t_min = 5;  // 0
                     t_max = 80; // 90
+                    break;
+                case Salt.HFP100:
+                    a0 = 100.0;
+                    a1 = 0.0;
+                    a2 = 0.0;
+                    a3 = 0.0;
+                    t_min = 0;
+                    t_max = 100;
+                    break;
+                case Salt.None:
+                default:
+                    a0 = double.NaN;
+                    a1 = double.NaN;
+                    a2 = double.NaN;
+                    a3 = double.NaN;
+                    t_min = double.NaN;
+                    t_max = double.NaN;
                     break;
             }
         }
